@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Generating Plan...</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="loading-card">
+            <h2>AI is Creating Your Personalized Plan...</h2>
+            <div class="loader"></div>
+            <p>Please wait 5 seconds</p>
+        </div>
+    </div>
+    <script>
+        setTimeout(() => { window.location.href = "/generate_plan"; }, 5000);
+    </script>
+</body>
+</html>

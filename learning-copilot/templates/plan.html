@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your 30-Day Plan</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="result-card">
+            <h1>Congratulations, {{ user.name }}!</h1>
+            <p>Your personalized 30-day plan for <strong>{{ user.topic }}</strong> is ready!</p>
+            <div class="summary">
+                Knowledge: {{ user.knowledge }} | Style: {{ user.style }} | Pace: {{ user.pace }}
+            </div>
+
+            <div class="timeline">
+                {% for day in plan %}
+                <div class="day-card">
+                    <h3>{{ day.day }}</h3>
+                    <p><strong>Content:</strong> <a href="{{ day.content[0] }}" target="_blank">Watch Videos</a> | <a href="{{ day.content[1] }}" target="_blank">Read Notes</a></p>
+                    <p><strong>Practice:</strong> {{ day.practice }}</p>
+                    <p><strong>Revision:</strong> {{ day.revision }}</p>
+                </div>
+                {% endfor %}
+            </div>
+            <a href="/" class="start-btn">Create Another Plan</a>
+        </div>
+    </div>
+</body>
+</html>

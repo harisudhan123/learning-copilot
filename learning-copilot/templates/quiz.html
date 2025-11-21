@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assessment Quiz</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="form-card">
+            <h2>Tell Us About You</h2>
+            <form method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <select name="topic" required>
+                    <option value="" disabled selected>Select Subject</option>
+                    {% for t in topics %}
+                        <option value="{{ t }}">{{ t }}</option>
+                    {% endfor %}
+                </select>
+
+                <p><strong>Current Knowledge Level:</strong></p>
+                <label><input type="radio" name="knowledge" value="Beginner" required> Beginner</label>
+                <label><input type="radio" name="knowledge" value="Intermediate"> Intermediate</label>
+                <label><input type="radio" name="knowledge" value="Advanced"> Advanced</label>
+
+                <p><strong>Learning Style:</strong></p>
+                <label><input type="radio" name="style" value="Visual" required> Visual (Videos & Diagrams)</label>
+                <label><input type="radio" name="style" value="Theory"> Theory First</label>
+                <label><input type="radio" name="style" value="Practice"> Practice-Based</label>
+
+                <p><strong>Pace:</strong></p>
+                <label><input type="radio" name="pace" value="Slow" required> Slow & Steady</label>
+                <label><input type="radio" name="pace" value="Fast"> Fast-Track</label>
+
+                <button type="submit" class="submit-btn">Generate My 30-Day Plan</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

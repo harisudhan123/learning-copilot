@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+body { background: linear-gradient(135deg, #00fff2 , #d9ff00); min-height: 100vh; }
+
+.container { display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 20px; }
+
+.hero-card, .form-card, .loading-card, .result-card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    padding: 40px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    border: 1px solid rgba(255,255,255,0.2);
+    text-align: center;
+    color: rgb(0, 0, 0);
+}
+
+.title-gradient {
+    font-size: 3rem;
+    background: linear-gradient(90deg, #5601ff, #000000);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.subtitle { font-size: 1.3rem; margin: 20px 0; opacity: 0.9; }
+
+input, select, button {
+    width: 100%;
+    padding: 14px;
+    margin: 12px 0;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+}
+
+input, select { background: rgb(38, 2, 238); color: rgb(239, 239, 239); }
+input::placeholder { color: rgba(255, 255, 255, 0.864); }
+
+label { display: block; text-align: left; margin: 8px 0; cursor: pointer; }
+
+.start-btn, .submit-btn {
+    background: linear-gradient(45deg, #000000, #000000);
+    color: rgb(204, 255, 0);
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 20px;
+}
+
+.start-btn:hover, .submit-btn:hover { transform: scale(1.05); }
+
+.loader {
+    border: 6px solid #f3f3f3;
+    border-top: 6px solid #ff6b6b;
+    border-radius: 50%;
+    width: 60px; height: 60px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+.timeline { margin-top: 30px; }
+.day-card {
+    background: rgba(253, 2, 236, 0.882);
+    margin: 15px 0;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: left;
+    transition: 0.3s;
+}
+.day-card:hover { transform: translateY(-5px); background: rgb(255, 255, 255); }
+
+.summary {
+    background: rgb(25, 0, 255);
+    padding: 15px;
+    border-radius: 12px;
+    margin: 20px 0;
+}
